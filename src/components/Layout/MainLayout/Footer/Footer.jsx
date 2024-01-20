@@ -3,7 +3,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 
 function Footer() {
-    return <div className="wrapper-footer flex bg-teal-900 text-white w-full justify-center text-2xl">
+    return <div className="wrapper-footer inset-x-0 bottom-0 flex bg-teal-900 text-white w-full justify-center text-2xl">
         <div className="container w-[1150px] flex py-[50px] ">
                 <div className="logo w-[33.333%]">
                     <img src={logo} alt=""  className='w-[150px]'/>

@@ -1,12 +1,19 @@
-import background from '../../assets/background/aaa.jpg';
+
 import img from '../../assets/DanhSachSPHome/img2.jpg'
 import { TbCurrencyDong } from "react-icons/tb";
+import SliderComponent from '../../components/SliderComponent/SliderComponent';
+import CartProduct from '../../components/CartProduct';
+
 
 function Home() {
 	return (
 		<div className="wrapper">
 		<div className="slide-show banner ">
-			{<img className="object-cover  w-full h-auto m-auto mt-[50px]" src={background} alt="" />}
+			{/* {<img className="object-cover  w-full h-auto m-auto mt-[50px]" src={background} alt="" />}   arrImg={[img1,img2]} */}
+
+			<SliderComponent  />
+
+
 		</div>
 
 		<div className="product pb-[90px]">
@@ -14,30 +21,12 @@ function Home() {
 			<p className='text-xl text-orange-400 text-center mb-10'>Bộ sưu tập balo nữ da thật Velisa mới nhất. Những sản phẩm cao cấp được chế tác từ da thật 100% cùng kinh nghiệm trên 10 năm của những người thợ giỏi sẽ giúp bạn trở nên năng động và nổi bật.</p>
 			
 			
-			<div className="container-product w-[100%] flex cursor-pointer bg-emerald-200 flex-wrap ">
-				<div className=" w-[25%] ">
-				<img src={img} alt=""className='p-8' />
-				<div className="name text-center opacity-85">Balo da thật Velisa</div>
-				<div className="price  color-lime-400 flex justify-center text-2xl font-medium pb-10">1,600,000 <TbCurrencyDong className='mt-1' /> </div>
-				</div>
+			<div className="container-product w-[100%] flex cursor-pointer  flex-wrap ">
+				<CartProduct img={img} />
+				<CartProduct img={img} />
+				<CartProduct img={img} />
+				<CartProduct img={img} />
 
-				<div className=" w-[25%] ">
-				<img src={img} alt=""className='p-8' />
-				<div className="name text-center opacity-85">Balo da thật Velisa</div>
-				<div className="price  color-lime-400 flex justify-center text-2xl font-medium pb-10">1,600,000 <TbCurrencyDong className='mt-1' /> </div>
-				</div>
-
-				<div className=" w-[25%] ">
-				<img src={img} alt=""className='p-8' />
-				<div className="name text-center opacity-85">Balo da thật Velisa</div>
-				<div className="price  color-lime-400 flex justify-center text-2xl font-medium pb-10">1,600,000 <TbCurrencyDong className='mt-1' /> </div>
-				</div>
-
-				<div className="w-[25%] ">
-				<img src={img} alt=""className='p-8' />
-				<div className="name text-center opacity-85">Balo da thật Velisa</div>
-				<div className="price  color-lime-400 flex justify-center text-2xl font-medium pb-10">1,600,000 <TbCurrencyDong className='mt-1' /> </div>
-				</div>
 					
 
 			</div>
@@ -45,7 +34,9 @@ function Home() {
 
 		</div>
 
+
 		</div>
+
 	);
 }
 

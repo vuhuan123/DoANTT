@@ -12,7 +12,7 @@ function Header() {
 	const [login, setLogin] = useState(false);
 	const [searchResult, setSearchResult] = useState([]);
 	return (
-		<header className="flex flex-col justify-center items-center w-full  fixed flex-10">
+		<header className="flex flex-col justify-center items-center w-full  fixed z-50">
 			<div className="w-full fixed  flex justify-center bg-red-600 relative">
 				<div className="wrapper h-52 w-[1150px]">
 					<div className="h-36 text-white items-center flex justify-around">
@@ -96,7 +96,7 @@ function Header() {
 					</li>
 					<li className=" mx-20 hover:text-red-200 ">
 						{' '}
-						<Link to={'/faqs'}>FAQs</Link>
+						<Link to={'/aboutme'}>AboutMe</Link>
 					</li>
 				</ul>
 			</div>

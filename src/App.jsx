@@ -1,6 +1,8 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { PublicRouter } from './routes';
 import MainLayout from './components/Layout/MainLayout/MainLayout.jsx';
+import Admin from './pages/Admin/Admin.jsx'
+
 function App() {
     return (
         <BrowserRouter>
@@ -21,6 +23,12 @@ function App() {
                             />
                         );
                     })}
+
+
+                    <Route path='/admin' element={< Admin/>} />
+
+
+                    
                 </Routes>
             </div>
         </BrowserRouter>
