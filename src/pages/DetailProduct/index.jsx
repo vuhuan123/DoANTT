@@ -14,12 +14,9 @@ function DetailProduct() {
 
     const handelMinus = ()=>{
         if(count > 1){
-
             setCount(count - 1)
-
         }
     }
-
     const handlePlus = ()=>{
         setCount (count + 1)
     }
@@ -42,9 +39,9 @@ function DetailProduct() {
             <div className="flex  mt-[50px] ">
 
 
-            <input type="button" value={"-"} onClick={handelMinus} className="cursor-pointer w-[41px] h-[41px] text-center font-[16px] bg-gray-200"/>
-            <input type="text" value={count} min={1} className="bg-white h-[41px] text-center w-[70px] border border-gray-200 " />
-            <input type="button" value={"+"} onClick={handlePlus} className="cursor-pointer w-[41px] h-[41px] text-center font-[16px] bg-gray-200"/>
+            <input type="button"  defaultValue={"-"} onClick={handelMinus} className="cursor-pointer w-[41px] h-[41px] text-center font-[16px] bg-gray-200"/>
+            <input type="text"   value={count} min={1} className="bg-white h-[41px] text-center w-[70px] border border-gray-200 " />
+            <input type="button"  defaultValue={"+"} onClick={handlePlus} className="cursor-pointer w-[41px] h-[41px] text-center font-[16px] bg-gray-200"/>
             </div>
             <div className="mt-[50px] flex">
 

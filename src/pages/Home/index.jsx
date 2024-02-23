@@ -1,5 +1,8 @@
 
 import img from '../../assets/DanhSachSPHome/img2.jpg'
+import img3 from '../../assets/DanhSachSPHome/img6.jpg'
+import img4 from '../../assets/DanhSachSPHome/img4.jpg'
+import img7 from '../../assets/DanhSachSPHome/img7.jpg'
 import { TbCurrencyDong } from "react-icons/tb";
 import SliderComponent from '../../components/SliderComponent/SliderComponent';
 import CartProduct from '../../components/CartProduct';
@@ -22,12 +25,10 @@ function Home() {
 			
 			
 			<div className="container-product w-[100%] flex cursor-pointer  flex-wrap ">
-				<CartProduct img={img} />
-				<CartProduct img={img} />
-				<CartProduct img={img} />
-				<CartProduct img={img} />
-
-					
+				<CartProduct img={img3} name={"Túi xách nữ thời trang"} price={"1.000.000"} />
+				<CartProduct img={img7} name={"Túi đeo chéo nữ xách tay"} price={"1.750.000"} />
+				<CartProduct img={img} name={"Túi Da Cao Cấp VS"} price={"1.000.000"} />
+				<CartProduct img={img4} name={"Túi xách nữ thời trang"} price={"1.200.000"} />
 
 			</div>
 

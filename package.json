@@ -12,6 +12,8 @@
   "dependencies": {
     "@material-tailwind/react": "^2.1.8",
     "@tippyjs/react": "^4.2.6",
+    "antd": "^5.14.1",
+    "axios": "^1.6.7",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
