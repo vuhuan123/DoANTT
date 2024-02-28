@@ -2,13 +2,25 @@ import {PlusOutlined}  from '@ant-design/icons';
 import { Modal, Space, Table, Tag } from 'antd';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useState, useEffect} from 'react';
+import axios from 'axios';
+
+axios.defaults.baseURL = "http://localhost:3009/"
 
 
 function AdminProduct() {
     const { Column, ColumnGroup } = Table;
     const [isModalOpen, setIsModalOpen] = useState(false);
-    //call AIp
+    const [newProduct, setNewProduct] = useState({
+        name :"",
+        price:"",
+        description:"",
+        img:"",
 
+    })
+
+
+
+    //call AIp
     const [products, setProducts] = useState([{
         name : "Túi Da Cao Cấp",
         img : "https://latashop.com/products/tui-xach-da-nu-hinh-thang-lata-tx10",
@@ -17,7 +29,7 @@ function AdminProduct() {
 
     useEffect(()=>{
 
-        fetch("http://localhost:3009/api/createproduct/getProduct")
+        fetch("http://localhost:3009/api/product/getProduct")
         .then(res=> res.json())
         .then(data => setProducts(data))
 
@@ -27,8 +39,12 @@ function AdminProduct() {
       setIsModalOpen(true);
     };
   
-    const handleOk = () => {
-      setIsModalOpen(false);
+    const handleOk = async(e) => {
+        // e.prevenDefault();
+
+        const data = await axios.post("/api/product/createProduct", newProduct)
+        setIsModalOpen(false);
+        console.log(data);
     };
   
     const handleCancel = () => {
@@ -42,6 +58,20 @@ const onFinish = (values) => {
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
+
+  const handleChange =(e)=>{
+    const {value, name} = e.target
+
+    setNewProduct((preve)=>{
+        return {
+            ...newProduct,
+            [name] : value
+        }
+    })
+     
+
+
+  }
 
 
 
@@ -74,7 +104,7 @@ const onFinish = (values) => {
     >
         <Form.Item
         label="Tên"
-        name="Tên"
+        name="name"
         rules={[
             {
             required: true,
@@ -82,12 +112,12 @@ const onFinish = (values) => {
             },
         ]}
         >
-        <Input />
+        <Input value={newProduct.name} onChange={handleChange} name='name' />
         </Form.Item>
 
         <Form.Item
         label="Giá"
-        name="Giá"
+        name="price"
         rules={[
             {
             required: true,
@@ -95,7 +125,7 @@ const onFinish = (values) => {
             },
         ]}
         >
-        <Input />
+        <Input value={newProduct.price}  onChange={handleChange} name='price'/>
         </Form.Item>
 
         <Form.Item
@@ -108,7 +138,20 @@ const onFinish = (values) => {
             },
         ]}
         >
-        <Input />
+        <Input value={newProduct.description}  onChange={handleChange} name='description'/>
+        </Form.Item>
+
+        <Form.Item
+        label="Image"
+        name="img"
+        rules={[
+            {
+            required: true,
+            message: 'Please input your username!',
+            },
+        ]}
+        >
+        <Input value={newProduct.img}  onChange={handleChange} name='img'/>
         </Form.Item>
 
 
@@ -145,16 +188,16 @@ const onFinish = (values) => {
                      </tr>
                  </thead>
                  <tbody>
-                 {products.map((product)=>(
+                 {products.map((product,_id)=>(
              
                      <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                         <th  scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {product.name}
                          </th>
-                         <td className="px-6 py-4">
+                         <td  className="px-6 py-4">
                          Decription
                          </td>
-                         <td className="px-6 py-4">
+                         <td  className="px-6 py-4">
                        {product.price}
                          </td>
                          <td className="px-6 py-4">

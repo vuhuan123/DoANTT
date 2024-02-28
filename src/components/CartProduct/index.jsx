@@ -5,7 +5,7 @@ function CartProduct({img, name, price}) {
 
     return <div className=" w-[23%] border-solid border-2 mx-[5px] my-[15px] rounded p-[10px]">
     <Link to="/detailproduct" >
-    <img src={img} alt=""className=' hover:scale-110 hover:shadow-2xl' />
+    <img src={img} alt=""className=' hover:scale-110 hover:shadow-2xl w-[241px] h-[300px]'  />
     
     </Link>
     

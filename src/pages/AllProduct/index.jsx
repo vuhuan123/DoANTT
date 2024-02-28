@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import CartProduct from "../../components/CartProduct";
 import img from "../../assets/DanhSachSPHome/IMG_8571.jpg"
-import axios from "axios";
  function AllProduct() {
     let count = 0;
     const [products, setProducts] = useState([{
@@ -12,7 +11,7 @@ import axios from "axios";
 
     useEffect(()=>{
 
-        fetch("http://localhost:3009/api/createproduct/getProduct")
+        fetch("http://localhost:3009/api/product/getProduct")
         .then(res=> res.json())
         .then(data => setProducts(data))
 
